@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Functions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body>
+    <div id="greetingWidget" class="widget-container" x-data="greetingWidget()">
+        <input type="text" x-model="neighbourName" placeholder="Enter neighbour's name">
+        <button @click="greetNeighbour()">Greet</button>
+        <p x-text="greeting"></p>
+    </div>
+
+    <div id="widget" class="widget-container" x-data="widget()">
+        <label>
+            <input type="radio" x-model="selectedShift" value="morning"> Morning
+        </label>
+        <label>
+            <input type="radio" x-model="selectedShift" value="afternoon"> Afternoon
+        </label>
+        <label>
+            <input type="radio" x-model="selectedShift" value="nightshift"> Night Shift
+        </label>
+        <button @click="calculateFee()">Calculate Fee</button>
+        <p x-text="fee"></p>
+    </div>
+
+    <div class="widget-container">
+        <h2>Total Phone Bill Calculator</h2>
+        <div>
+            <label for="phoneString1">Enter phone string 1:</label>
+            <input type="text" id="phoneString1" x-model="phoneString">
+            <button @click="calculateTotal">Calculate Total</button>
+            <p x-text="totalCost" x-show="totalCost !== ''"></p>
+        </div>
+    </div>
+
+    <div id="sentenceAnalyzer" class="widget-container" x-data="sentenceAnalyzer()">
+        <h2>Sentence Analyzer</h2>
+        <div>
+            <label for="sentenceInput">Enter a sentence:</label>
+            <input type="text" id="sentenceInput" x-model="sentence">
+            <button @click="analyzeSentence">Analyze</button>
+        </div>
+        <div x-show="sentence !== ''">
+            <p><strong>Longest Word:</strong> <span x-text="longest"></span></p>
+            <p><strong>Shortest Word:</strong> <span x-text="shortest"></span></p>
+            <p><strong>Total Length of Words:</strong> <span x-text="totalLength"></span></p>
+        </div>
+    </div>
+
+    <div class="widget-container">
+        <h2>Counter Widget</h2>
+        <div x-data="{ count: 1 }">
+            <p x-text="count"></p>
+            <button @click="count++">Count Up</button>
+            <button @click="count--">Count Down</button>
+        </div>
+    </div>
+    
+    <script src="shift.js"></script>
+    <script src="greet.js"></script>
+    <script src="phone.js"></script>
+    <script src="wordgame.js"></script>
+</body>
+</html>
