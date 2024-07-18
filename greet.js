@@ -20,3 +20,6 @@ function greetingWidget() {
 
 
 
+document.addEventListener('alpine:init', () => {
+    Alpine.data('greetingsWidget', greetingWidget);
+})

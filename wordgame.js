@@ -35,6 +35,7 @@ function wordLengths(sentences) {
 }
 
 // Alpine.js component definition
+document.addEventListener('alpine:init', () => {
 Alpine.data('sentenceAnalyzer', function() {
     return {
         sentence: '',
@@ -48,3 +49,4 @@ Alpine.data('sentenceAnalyzer', function() {
         }
     };
 });
+})

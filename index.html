@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootcamp Functions</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <div id="greetingWidget" class="widget-container" x-data="greetingWidget()">
+    <div x-data="greetingsWidget" id="greetingWidget" class="widget-container" x-data="greetingWidget()">
         <input type="text" x-model="neighbourName" placeholder="Enter neighbour's name">
         <button @click="greetNeighbour()">Greet</button>
         <p x-text="greeting"></p>
@@ -28,7 +28,7 @@
         <p x-text="fee"></p>
     </div>
 
-    <div class="widget-container">
+    <div x-data="phoneBillCalculator" class="widget-container">
         <h2>Total Phone Bill Calculator</h2>
         <div>
             <label for="phoneString1">Enter phone string 1:</label>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div id="sentenceAnalyzer" class="widget-container" x-data="sentenceAnalyzer()">
+    <div x-data="sentenceAnalyzer" id="sentenceAnalyzer" class="widget-container" x-data="sentenceAnalyzer()">
         <h2>Sentence Analyzer</h2>
         <div>
             <label for="sentenceInput">Enter a sentence:</label>
@@ -52,14 +52,7 @@
         </div>
     </div>
 
-    <div class="widget-container">
-        <h2>Counter Widget</h2>
-        <div x-data="{ count: 1 }">
-            <p x-text="count"></p>
-            <button @click="count++">Count Up</button>
-            <button @click="count--">Count Down</button>
-        </div>
-    </div>
+    
     
     <script src="shift.js"></script>
     <script src="greet.js"></script>
